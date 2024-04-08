@@ -80,7 +80,7 @@ const crystal_rando: DiscordCommand = {
 	async execute(interaction: ChatInputCommandInteraction) {
 		await interaction.deferReply();
 
-		const mode = interaction.options.getString('modo');
+		const mode = interaction.options.getString('mode');
 		const spoiler = interaction.options.getBoolean('spoiler') ?? false;
 		let rom_name =
 			interaction.options.getString('nombre') ??

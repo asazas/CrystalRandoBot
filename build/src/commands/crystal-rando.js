@@ -57,12 +57,12 @@ const crystal_rando = {
         .addBooleanOption((option) => option.setName('spoiler').setDescription('Whether to generate spoiler logs for the seed.')),
     async execute(interaction) {
         await interaction.deferReply();
-        const modo = interaction.options.getString('modo');
+        const mode = interaction.options.getString('mode');
         const spoiler = interaction.options.getBoolean('spoiler') ?? false;
         let rom_name = interaction.options.getString('nombre') ??
             `${random_words_1.random_classes[Math.floor(Math.random() * random_words_1.random_classes.length)]}${random_words_1.random_names[Math.floor(Math.random() * random_words_1.random_names.length)]}`;
         rom_name = rom_name.substring(0, 50);
-        await generate_itemrando(interaction, 'standard.rnqs', modo, rom_name, spoiler);
+        await generate_itemrando(interaction, 'updatedstandard.rnqs', mode, rom_name, spoiler);
     },
 };
 exports.default = crystal_rando;
