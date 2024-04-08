@@ -1,0 +1,29 @@
+{
+  "name": "crystalrandobot",
+  "version": "1.0.0",
+  "description": "A Discord bot for Pokemon Crystal Randomizer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "asazas",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.12.5",
+    "@types/validator": "^13.11.9",
+    "@typescript-eslint/eslint-plugin": "^7.5.0",
+    "@typescript-eslint/parser": "^7.5.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-tsdoc": "^0.2.17",
+    "typescript": "^5.4.4"
+  },
+  "dependencies": {
+    "@types/luxon": "^3.4.2",
+    "discord.js": "^14.14.1",
+    "luxon": "^3.4.4",
+    "reflect-metadata": "^0.2.2",
+    "sequelize": "^6.37.2",
+    "sequelize-typescript": "^2.1.6",
+    "sqlite3": "^5.1.7"
+  }
+}

@@ -1,0 +1,8 @@
+.vscode
+node_modules
+**/config.json
+**/*.js.map
+.eslintrc.*
+.prettierrc
+data/*
+db-browser-sqlite
