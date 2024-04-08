@@ -45,7 +45,7 @@ const crystal_rando = {
         .setDescription('Generate a Pokémon Crystal Item Randomizer seed.')
         .addStringOption((option) => option.setName('mode').setDescription('Game mode.').setRequired(true).addChoices({
         name: 'Maximum Shopsanity (2024 Tourney)',
-        value: 'TourneySettings/MaximumShopsanityRaceEdition.yml',
+        value: 'MaximumShopsanityRaceEdition.yml',
     }, {
         name: 'Extreme Full Item Randomizer (2023 Tourney)',
         value: 'TourneySettings/FullItemRandoTournament2023Stage1Extreme.yml',
