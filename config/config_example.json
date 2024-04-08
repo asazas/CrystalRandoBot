@@ -1,5 +1,8 @@
 {
-    "discordClientId": "DISCORD_CLIENT_ID",
-    "discordGuildId": "DISCORD_GUILD_ID",
-    "discordToken": "DISCORD_BOT_TOKEN"
+	"discordClientId": "DISCORD_CLIENT_ID",
+	"discordGuildId": "DISCORD_GUILD_ID",
+	"discordToken": "DISCORD_BOT_TOKEN",
+	"UPRPath": "/path/to/universal_pokemon_randomizer",
+	"ItemRandoPath": "/path/to/crystal_item_rando",
+	"SpeedchoicePath": "/path/to/crystal_speedchoice.gbc"
 }

@@ -4,7 +4,7 @@ import { process_date } from '../util/date_util';
 const timestamp: DiscordCommand = {
 	data: new SlashCommandBuilder()
 		.setName('timestamp')
-		.setDescription('Convert a date into the Discord timestamp format')
+		.setDescription('Convert a date into the Discord timestamp format.')
 		.addStringOption((option) =>
 			option.setName('date').setDescription('Date following format dd/mm/yyyy. Default: today.'),
 		)
@@ -14,7 +14,7 @@ const timestamp: DiscordCommand = {
 		.addStringOption((option) =>
 			option
 				.setName('timezone')
-				.setDescription('Time zone. Default: EST/EDT')
+				.setDescription('Time zone. Default: EST/EDT.')
 				.addChoices(
 					{ name: 'US Eastern (EST/EDT)', value: 'America/New_York' },
 					{ name: 'US Central (CST/CDT)', value: 'America/Chicago' },

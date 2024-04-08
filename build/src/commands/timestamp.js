@@ -5,12 +5,12 @@ const date_util_1 = require("../util/date_util");
 const timestamp = {
     data: new discord_js_1.SlashCommandBuilder()
         .setName('timestamp')
-        .setDescription('Convert a date into the Discord timestamp format')
+        .setDescription('Convert a date into the Discord timestamp format.')
         .addStringOption((option) => option.setName('date').setDescription('Date following format dd/mm/yyyy. Default: today.'))
         .addStringOption((option) => option.setName('time').setDescription('Time following format hh:mm. Default: current time.'))
         .addStringOption((option) => option
         .setName('timezone')
-        .setDescription('Time zone. Default: EST/EDT')
+        .setDescription('Time zone. Default: EST/EDT.')
         .addChoices({ name: 'US Eastern (EST/EDT)', value: 'America/New_York' }, { name: 'US Central (CST/CDT)', value: 'America/Chicago' }, { name: 'US Mountain (MST/MDT)', value: 'America/Denver' }, { name: 'US Pacific (PST/PDT)', value: 'America/Los_Angeles' }, { name: 'Central Europe (CET/CEST)', value: 'Europe/Paris' }, { name: 'Western Europe (WET/WEST)', value: 'Europe/Lisbon' }, { name: 'Eastern Europe (EET/EEST)', value: 'Europe/Sofia' }, { name: 'Japan (JST)', value: 'Asia/Tokyo' })),
     async execute(interaction) {
         const date = (interaction.options.getString('date') ?? 'today').toLowerCase();
