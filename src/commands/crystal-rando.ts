@@ -37,7 +37,7 @@ async function generate_itemrando(
 		{ cwd: ItemRandoPath },
 	);
 	await exec(
-		`./Flips --create --bps "${VanillaCrystalPath}" "${tmp_dir_name}/${name}.gbc" "${tmp_dir_name}/${name}.bps"`,
+		`./flips --create --bps "${VanillaCrystalPath}" "${tmp_dir_name}/${name}.gbc" "${tmp_dir_name}/${name}.bps"`,
 		{ cwd: FlipsPath },
 	);
 

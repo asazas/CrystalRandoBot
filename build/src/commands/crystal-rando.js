@@ -25,7 +25,7 @@ async function generate_itemrando(interaction, upr_mode, itemrando_mode, name, s
     const spoiler_flag = spoiler ? '-l' : '';
     await exec(`java -jar universal-pokemon-randomizer-zx.jar cli -s ZXsettings/${upr_mode} -i ${config_json_1.SpeedchoicePath} -o "${tmp_dir_name}/${name}_UPR.gbc" ${spoiler_flag}`, { cwd: config_json_1.UPRPath });
     await exec(`"./Pokemon Crystal Item Randomizer" cli -i "${tmp_dir_name}/${name}_UPR.gbc" -o "${tmp_dir_name}/${name}.gbc" -m "./Modes/${itemrando_mode}" ${spoiler_flag}`, { cwd: config_json_1.ItemRandoPath });
-    await exec(`./Flips --create --bps "${config_json_1.VanillaCrystalPath}" "${tmp_dir_name}/${name}.gbc" "${tmp_dir_name}/${name}.bps"`, { cwd: config_json_1.FlipsPath });
+    await exec(`./flips --create --bps "${config_json_1.VanillaCrystalPath}" "${tmp_dir_name}/${name}.gbc" "${tmp_dir_name}/${name}.bps"`, { cwd: config_json_1.FlipsPath });
     if (spoiler) {
         await interaction.editReply({
             files: [
