@@ -4,5 +4,7 @@
 	"discordToken": "DISCORD_BOT_TOKEN",
 	"UPRPath": "/path/to/universal_pokemon_randomizer",
 	"ItemRandoPath": "/path/to/crystal_item_rando",
-	"SpeedchoicePath": "/path/to/crystal_speedchoice.gbc"
+	"SpeedchoicePath": "/path/to/crystal_speedchoice.gbc",
+	"FlipsPath": "/path/to/flips/directory",
+	"VanillaCrystalPath": "/path/to/pkmn_crystal_rev_a_vanilla.gbc"
 }

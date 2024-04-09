@@ -1,5 +1,5 @@
 import { SlashCommandBuilder } from '@discordjs/builders';
-import { UPRPath, ItemRandoPath, SpeedchoicePath } from '../../config/config.json';
+import { UPRPath, ItemRandoPath, SpeedchoicePath, FlipsPath, VanillaCrystalPath } from '../../config/config.json';
 import { random_classes, random_names } from '../strings/random_words';
 
 import util from 'util';
@@ -9,7 +9,7 @@ const exec = util.promisify(require('child_process').exec);
 /**
  * Invoked when requesting the generation of a Pokémon Crystal Item Randomizer seed.
  *
- * @remarks Generates a Pokémon Crystal Item Randomizer seed and sends it as the answer to the command interaction.
+ * @remarks Generates a Pokémon Crystal Item Randomizer seed and sends it as a .bps patch.
  *
  * @param interaction - Interaction corresponding to the invoked command.
  * @param upr_mode - Relative path to the Universal Pokémon Randomizer preset.
@@ -36,17 +36,21 @@ async function generate_itemrando(
 		`"./Pokemon Crystal Item Randomizer" cli -i "${tmp_dir_name}/${name}_UPR.gbc" -o "${tmp_dir_name}/${name}.gbc" -m "./Modes/${itemrando_mode}" ${spoiler_flag}`,
 		{ cwd: ItemRandoPath },
 	);
+	await exec(
+		`./Flips --create --bps "${VanillaCrystalPath}" "${tmp_dir_name}/${name}.gbc" "${tmp_dir_name}/${name}.bps"`,
+		{ cwd: FlipsPath },
+	);
 
 	if (spoiler) {
 		await interaction.editReply({
 			files: [
-				`${tmp_dir_name}/${name}.gbc`,
+				`${tmp_dir_name}/${name}.bps`,
 				{ attachment: `${tmp_dir_name}/${name}_UPR.gbc.log`, name: `SPOILER_${name}_UPR.gbc.log` },
 				{ attachment: `${tmp_dir_name}/${name}.gbc_SPOILER.txt`, name: `SPOILER_${name}.gbc_SPOILER.txt` },
 			],
 		});
 	} else {
-		await interaction.editReply({ files: [`${tmp_dir_name}/${name}.gbc`] });
+		await interaction.editReply({ files: [`${tmp_dir_name}/${name}.bps`] });
 	}
 
 	await exec(`rm -rf ${tmp_dir_name}`);
@@ -83,7 +87,7 @@ const crystal_rando: DiscordCommand = {
 		const mode = interaction.options.getString('mode');
 		const spoiler = interaction.options.getBoolean('spoiler') ?? false;
 		let rom_name =
-			interaction.options.getString('nombre') ??
+			interaction.options.getString('name') ??
 			`${random_classes[Math.floor(Math.random() * random_classes.length)]}${
 				random_names[Math.floor(Math.random() * random_names.length)]
 			}`;
